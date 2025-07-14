@@ -8,6 +8,8 @@
 [![Firebase](https://img.shields.io/badge/Firebase-BaaS-orange?logo=firebase&logoColor=white)](https://firebase.google.com/)
 [![Lucide Icons](https://img.shields.io/badge/Lucide-Icons-green?logo=lucide&logoColor=white)](https://lucide.dev/)
 
+A modern Todo List application built with the latest web technologies to help you stay organized.
+
 ![Dashboard Screenshot](././public/Screenshot%201.png)
 ![Dashboard Screenshot](././public/Screenshot%202.png)
 ![Dashboard Screenshot](././public/Screenshot%203.png)
