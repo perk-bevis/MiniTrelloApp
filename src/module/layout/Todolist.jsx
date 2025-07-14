@@ -55,7 +55,7 @@ const Todolist = () => {
   return (
     <div className="bg-gray-100 font-sans">
       <div className="flex flex-col h-screen w-screen">
-        <header className="bg-[#4a154b] text-white p-3 flex justify-between items-center shadow-md">
+        <header className="bg-[#4a154b] text-white p-3 flex justify-between items-center shadow-md w-[1617px]">
           <h1 className="text-lg font-normal">My Trello board</h1>
           <button className="bg-white/20 hover:bg-white/30 text-sm font-medium py-2 px-4 rounded-md">
             + Invite member
