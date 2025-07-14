@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import frintf from "../../assets/printf.png"
 import CardModal from './CardModal'
 import finishedTask from "../../assets/finishedTask.png"
+import user from "../../assets/users.png"
+import InviteBoard from './InviteBoard'
 
 const Todolist = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedList, setSelectedList] = useState('')
   const [selectedCard, setSelectedCard] = useState('')
   const [inputValues, setInputValues] = useState({});
+  const [isInviteOpen, setIsInviteOpen] = useState(false)
   const [jobs, setJobs] = useState(() => {
     const savedJobs = localStorage.getItem("jobs");
     return savedJobs ? JSON.parse(savedJobs) : [];
@@ -34,31 +37,32 @@ const Todolist = () => {
     }));
 
   };
- const handleSubmit = (e, listName) => {
-  e.preventDefault();
-  const currentInputValue = inputValues[listName] || "";
+  const handleSubmit = (e, listName) => {
+    e.preventDefault();
+    const currentInputValue = inputValues[listName] || "";
 
-  if (!currentInputValue.trim()) {
-    alert("Tên công việc không được để trống.");
-    return;
-  }
-  const newJob = {
-    id: Math.ceil(Math.random() * 100000000),
-    jobname: currentInputValue.trim(),
-    status: false,
-    list: listName 
+    if (!currentInputValue.trim()) {
+      alert("The job title cannot be left blank.");
+      return;
+    }
+    const newJob = {
+      id: Math.ceil(Math.random() * 100000000),
+      jobname: currentInputValue.trim(),
+      status: false,
+      list: listName
+    };
+    setJobs([...jobs, newJob]);
+
+    handleInputChange(listName, "");
   };
-  setJobs([...jobs, newJob]);
-
-  handleInputChange(listName, "");
-};
   return (
     <div className="bg-gray-100 font-sans">
       <div className="flex flex-col h-screen w-screen">
         <header className="bg-[#4a154b] text-white p-3 flex justify-between items-center shadow-md w-[1617px]">
           <h1 className="text-lg font-normal">My Trello board</h1>
-          <button className="bg-white/20 hover:bg-white/30 text-sm font-medium py-2 px-4 rounded-md">
-            + Invite member
+          <button onClick={() => setIsInviteOpen('Invite member')} className="bg-white/20 hover:bg-white/30 text-sm font-medium py-2 px-4 rounded-md flex">
+            <img src={user} alt="" className='mr-1' />
+            <span> Invite member</span>
           </button>
         </header>
 
@@ -70,7 +74,7 @@ const Todolist = () => {
             </div>
             <div className="space-y-3">
               {jobs
-                .filter(job => job.list === 'To do') 
+                .filter(job => job.list === 'To do')
                 .map(job => (
                   <div key={job.id} className="bg-neutral-800 p-3 rounded-md text-white cursor-pointer hover:bg-neutral-700">
                     {job.jobname}
@@ -98,7 +102,7 @@ const Todolist = () => {
             </div>
             <div className="space-y-3">
               {jobs
-                .filter(job => job.list === 'Doing') 
+                .filter(job => job.list === 'Doing')
                 .map(job => (
                   <div key={job.id} className="bg-neutral-800 p-3 rounded-md text-white cursor-pointer hover:bg-neutral-700">
                     {job.jobname}
@@ -127,7 +131,7 @@ const Todolist = () => {
             </div>
             <div className="space-y-3">
               {jobs
-                .filter(job => job.list === 'Done List') 
+                .filter(job => job.list === 'Done List')
                 .map(job => (
                   <div key={job.id} className="bg-neutral-800 p-3 rounded-md text-white cursor-pointer hover:bg-neutral-700">
                     {job.jobname}
@@ -163,6 +167,10 @@ const Todolist = () => {
             listName={selectedList}
             cardName={selectedCard}
           />
+        )}
+
+        {isInviteOpen && (
+          <InviteBoard onClose={() => setIsInviteOpen(false)} />
         )}
       </div>
     </div>
