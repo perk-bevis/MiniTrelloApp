@@ -1,5 +1,12 @@
 ## Mini-Trello-App Project
 
+[![License](https://img.shields.io/github/license/perk-bevis/MiniTrelloApp)](./LICENSE)
+[![React](https://img.shields.io/badge/React-v18-blue?logo=react&logoColor=white)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-Fast-yellow?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3-blue?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![React Router](https://img.shields.io/badge/React_Router-v6-red?logo=reactrouter&logoColor=white)](https://reactrouter.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-BaaS-orange?logo=firebase&logoColor=white)](https://firebase.google.com/)
+[![Lucide Icons](https://img.shields.io/badge/Lucide-Icons-green?logo=lucide&logoColor=white)](https://lucide.dev/)
 
 ![Dashboard Screenshot](././public/Screenshot%201.png)
 ![Dashboard Screenshot](././public/Screenshot%202.png)
@@ -7,14 +14,14 @@
 ![Dashboard Screenshot](././public/Screenshot%204.png)
 ![Dashboard Screenshot](././public/Screenshot%205.png)
 
-## Features
+## ✨ Features
 
 - **List Management:** Create new task lists (e.g., To Do, Doing, Done). Add, edit, and delete lists.
 - **Card Management:** Add new task cards to each list. Edit the content of cards. Delete cards when no longer needed.
 - **Drag & Drop:** Move task cards between different lists. Reorder cards within the same list.
 - **Data Persistence:** Automatically saves the board's state to the browser's Local Storage, preserving data across page reloads.
 
-## Project Structure
+##  📁 Project Structure
 
 ```
 .
@@ -54,7 +61,41 @@ src/
     └── routes.jsx
 ```
 
-## Contribution
+## ⚡ Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://npm.io/)
+
+### Installation
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/perk-bevis/MiniTrelloApp.git
+    ```
+2.  **Navigate to the project directory**
+    ```bash
+    cd MiniTrelloApp
+    ```
+3.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+    or if you use yarn:
+    ```bash
+    yarn install
+    ```
+4.  **Run the development server**
+    ```bash
+    npm start
+    ```
+    or
+    ```bash
+    yarn start
+    ```
+    The application will be available at `http://localhost:5173`.
+
+##  🤝 Contribution
 
 - Fork the repo, create a new branch, commit your changes, and submit a pull request.
 - Please follow code standards, format, and lint before submitting a PR.
