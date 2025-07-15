@@ -4,6 +4,9 @@ import Github from "../../assets/github.png"
 import users from "../../assets/users.png"
 import Archive from '../../assets/Archive.png'
 import { ListOrdered, Rows4 } from 'lucide-react'
+import { Eye } from 'lucide-react'
+import add from "../../assets/add.svg"
+import close from "../../assets/Close.svg"
 
 const CardModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null
@@ -17,7 +20,7 @@ const CardModal = ({ isOpen, onClose }) => {
             onClick={onClose}
             className="text-gray-400 hover:text-white text-xl"
           >
-            ×
+            <img src={close} alt="" className='w-50%'/>
           </button>
         </div>
         
@@ -38,14 +41,14 @@ const CardModal = ({ isOpen, onClose }) => {
                       SD
                     </div>
                     <button className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white text-sm hover:bg-gray-500">
-                      +
+                      <img src={add} alt="" />
                     </button>
                   </div>
                 </div>
                 <div >
                   <span className="text-gray-300 text-sm ">Notifications</span>
                   <button className="bg-gray-600 text-gray-300 px-3 py-1 rounded text-sm hover:bg-gray-500 flex items-center space-x-1">
-                    <span>👁</span>
+                    <Eye className=''/>
                     <span>Watch</span>
                   </button>
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import add from "../../assets/add.svg"
 
 const MainContent = () => {
   return (
@@ -16,7 +17,8 @@ const MainContent = () => {
           
         </Link>
         <button className="w-[250px] flex h-35 items-center justify-center rounded-md bg-white/10 p-4 text-gray-300 transition-colors hover:bg-white/20">
-          + Create a new board
+           <img src={add} alt="" className='mr-2'/>
+           <span>Create a new board</span>
         </button>
       </div>
     </div>

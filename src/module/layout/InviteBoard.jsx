@@ -14,7 +14,7 @@ const InviteBoard = () => {
                 <div className='flex justify-between px-5 pb-5 pt-1'>
                     {/* thẻ 1 */}
                     <div>
-                        <p>Invite someone to this Workspace with a link:</p>
+                        <p className='text-gray-400'>Invite someone to this Workspace with a link:</p>
                         <a href="" className='text-[#4179DD]'>Disable link</a>
                     </div>
 
